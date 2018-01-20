@@ -21,7 +21,7 @@ First steps:
 3. go to a directory of your choice using the command 'cd' ex: cd Desktop/
 4. write this on your terminal to get the repo on your machine :arrow_right: git clone https://github.com/samgo1/Soen341.git
 5. the default branch is the master, we want to work on the dev branch (development), change branch like this :arrow_right: git checkout dev
-6. modify the README.md by adding your name to the members list, use this command on terminal :arrow_right: vim README.md (to start editing file on vim press 'i' key on your keyboard, on cmd (for Windows users) :arrow_right: edit README.md
+6. modify the README.md by adding your name to the members list, use this command on terminal :arrow_right: vim README.md (to start editing file on vim press 'i' key on your keyboard), on cmd (for Windows users) :arrow_right: edit README.md
 7. Save the changes using esc then :wq on vim , Control-Z for Windows users.
 8. then add your modification to the staging area :arrow_right: git add -A
 9. you should see the README.md file in green  on the staging area  by doing :arrow_right: git status
