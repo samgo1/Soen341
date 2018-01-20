@@ -17,7 +17,7 @@ First steps:
  Hey guys here is a little exercise to get you going with git & github :smile:
 
 1. install git on your machine :arrow_right: https://git-scm.com/downloads
-2. open up your terminal on mac (cmd on windows)
+2. open up your terminal on mac (cmd on windows) and set up git :arrow_right: git config --global user.email "email@example.com" and :arrow_right: git config user.name "Mona Lisa"
 3. go to a directory of your choice using the command 'cd' ex: cd Desktop/
 4. write this on your terminal to get the repo on your machine :arrow_right: git clone https://github.com/samgo1/Soen341.git
 5. the default branch is the master, we want to work on the dev branch (development), change branch like this :arrow_right: git checkout dev
