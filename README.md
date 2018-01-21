@@ -11,8 +11,7 @@ members:
 
 
 
-
-
+JAN 20th 2017
 First steps:
  Hey guys here is a little exercise to get you going with git & github :smile:
 
@@ -30,3 +29,11 @@ First steps:
 :rainbow:
 
 What I am doing right now: I am learning ruby on rails by following the getting started tutorial on their website. I intend to use this tutorial as the foundation for our app. Once I understand ruby on rails I will explain it to you and figure out what should be done and how it should be done. 
+
+JAN 21th 2017
+
+Core features required:
+-Asking and answering questions
+-Voting on the answers
+-Accepting and rejecting answers
+
