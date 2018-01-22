@@ -3,6 +3,7 @@ Q/A web app
 
 members:
 - Samuel Gosselin
+- Avkash Sharma
 
 
 
