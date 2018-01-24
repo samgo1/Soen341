@@ -5,9 +5,7 @@ members:
 - Samuel Gosselin
 - Avkash Sharma
 - Jeffrey Tang
-
-
-
+- Nick Zombolas
 
 
 
