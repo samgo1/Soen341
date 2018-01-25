@@ -6,7 +6,7 @@ members:
 - Avkash Sharma
 - Jeffrey Tang
 - Nick Zombolas
-
+- Khaled Shah
 
 
 
