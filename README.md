@@ -8,7 +8,7 @@ members:
 - Nick Zombolas
 - Khaled Shah
 - Thierry St-Arnaud
-
+- Sébastien Deslandres
 
 JAN 20th 2017
 First steps:
