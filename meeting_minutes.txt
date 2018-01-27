@@ -1,0 +1,10 @@
+Meeting Friday Jan 26th 12:00 - 12:45 => 45 mins
+-------------------------------------
+We discussed about what MVC is and how Ruby on Rails utilize it.
+We looked at 4 verbs of the HTTP protocol : GET, POST, PUT, DELETE.
+
+The project time-line tentative:
+
+1. We all do back-end ruby on rails (I include the views in html.erb format as back-end)
+2. Once we are happy with all the features, we get into front-end 
+3. Finally we deploy on web if we still have time
