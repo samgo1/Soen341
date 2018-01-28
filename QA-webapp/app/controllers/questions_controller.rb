@@ -2,6 +2,10 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.all
   end
+
+  def show
+    @question = Question.find(params[:id])
+  end
   
   def new
   end
@@ -13,13 +17,18 @@ class QuestionsController < ApplicationController
     redirect_to questions_path
   end
   
-  def show
-    @question = Question.find(params[:id])
-  end
-  
   private
     def question_params
       params.require(:question).permit(:title, :text)
     end
-  
+
+  def edit
+    @question = Question.find{params[:id]}
+  end
+
+  def update
+  end
+
+  def delete
+  end
 end
