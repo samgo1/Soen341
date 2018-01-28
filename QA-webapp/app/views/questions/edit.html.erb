@@ -1,17 +1,18 @@
-<h2> New Question </h2>
+<h2> Editing a question </h2>
 
-<%= form_with scope: :question, url: questions_path ,local: true do |form| %>
+<%= form_with model: @question do |form| %>
   <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
   </p>
- 
+
   <p>
     <%= form.label :text %><br>
     <%= form.text_area :text %>
   </p>
  
   <p>
-    <%= form.submit 'Post Question' %>
+    <%= form.submit 'Update Question' %>
   </p>
+	 
 <% end %>
