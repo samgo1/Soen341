@@ -1,8 +1,11 @@
+<!-- temporary location for the sign in button -->
+<%= button_to 'Sign in'%>  
 <h1> Questions </h1>
+<%= button_to 'Ask a question', new_question_path, :method => :get %>
 
-<%= @questions.each do |question|%>
+<% @questions.each do |question|%>
 
-<h2> title: <%= question.title %> </h2>
-<p> <%= question.text %> </p>
+<h2> <%= link_to "#{question.title}", question  %> </h2>
+
 
 <% end %>
