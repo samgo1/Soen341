@@ -1,2 +1,7 @@
 <h2> <%= @question.title %> </h2>
 <p> <%= @question.text %> </p>
+
+<%= button_to 'Edit question', edit_question_path(@question), method: :get %> <br>
+<%= button_to 'Delete question', question_path(@question), method: :delete, 
+	data: { confirm: 'Are you sure?' }%>
+<%= button_to 'Back', questions_path, method: :get%>
