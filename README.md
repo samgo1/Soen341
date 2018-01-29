@@ -9,6 +9,7 @@ members:
 - Khaled Shah
 - Thierry St-Arnaud
 - Sébastien Deslandres
+- Fathi Khalaf
 
 JAN 20th 2017
 First steps:
