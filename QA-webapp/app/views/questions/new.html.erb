@@ -1,6 +1,20 @@
 <h2> New Question </h2>
 
 <%= form_with scope: :question, url: questions_path ,local: true do |form| %>
+
+ <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@question.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @question.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
@@ -12,6 +26,11 @@
   </p>
  
   <p>
-    <%= form.submit 'Post Question' %>
+    <!--Not good yet since the message will appear even if a text has been entered.-->
+    <!--, method: :get, data: { confirm: 'Please enter a question.' }-->
+    <%= form.submit 'Post Question'%>
   </p>
 <% end %>
+
+<!--Added the back button to give the user an option to go back to the main page if he doesn't want to write a question anymore-->
+<%= button_to 'Back', questions_path, method: :get%>
