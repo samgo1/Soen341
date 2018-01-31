@@ -1,7 +1,10 @@
 # Soen341
 Q/A web app
 
-members:
+# Objective
+To make a fully functioning Q/A website.
+
+# Team members
 - Samuel Gosselin
 - Avkash Sharma
 - Jeffrey Tang
@@ -10,6 +13,11 @@ members:
 - Thierry St-Arnaud
 - Sébastien Deslandres
 - Fathi Khalaf
+
+# Technologies
+- Ruby on Rails
+- SQLite 
+
 
 JAN 20th 2017
 First steps:
