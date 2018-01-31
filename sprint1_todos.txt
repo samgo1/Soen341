@@ -1,0 +1,12 @@
+Fri Jan 26th 2017
+
+- front end  (sign-in button, ask question button,thumbs up button) in HTML.
+- meeting minutes on github
+- breakdown tasks
+- plan for next sprint
+- every description on commit
+
+What you should do before the meeting on Feb 1st:
+
+- Getting started with ruby on rails  http://guides.rubyonrails.org/getting_started.html
+
