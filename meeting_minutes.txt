@@ -1,3 +1,4 @@
+--------------------------------------
 Meeting Friday Jan 26th 12:00 - 12:45 => 45 mins
 -------------------------------------
 We discussed about what MVC is and how Ruby on Rails utilize it.
@@ -8,3 +9,21 @@ The project time-line tentative:
 1. We all do back-end ruby on rails (I include the views in html.erb format as back-end)
 2. Once we are happy with all the features, we get into front-end 
 3. Finally we deploy on web if we still have time
+--------------------------------------
+Meeting Thursday Feb 1st 15:00 - 16:05 => 1h05
+--------------------------------------
+We looked at where we're at in the project.
+
+We discussed how we will use branching.
+Master branch => for TA demo
+Dev branch => where we merge all our features, we must git pull the last change to this branch before working on a feature
+Your branch => where you will implement your feature
+
+To start working on a feature you will go see the issues tab and assign one to yourself or create an issue that you would like our app to have.
+
+We talked about the next core feature to implement => the Answers to the questions
+
+the 'M' in MVC (Model-View-Controller) is about a respective table in the database. So for our Question Model, we have a table in the database named questions that has the following attributes : 'id', 'timestamp', 'title', 'text'. We can get all the questions in the database using this code in the controller => Question.all , returns an array composed of the questions
+
+We can find a question in the table by searching for its id =>Question.find(id) or using the params thats kept in all our pages Question.find(params[:id])
+--------------------------------------
