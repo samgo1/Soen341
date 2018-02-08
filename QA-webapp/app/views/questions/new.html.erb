@@ -38,16 +38,18 @@
     <input name="authenticity_token" type="hidden" value="NrOp5bsjoLRuK8IW5+dQEYjKGUJDe7TQoZVvq95Wteg=" />
 
     <label for="title">Title:</label><br>
-    <input type="text" name="question[title]" type="title">
+    <input type="text" name="question[title]" placeholder="Enter title" type="title">
     <br><br>
 
-    <label for="Content">Content:</label><br>
-    <textarea cols="85" rows="10" id="question_text" name="question[text]"></textarea><br>
+    <label for="Content">Content:</label><br>        
+    <textarea cols="85" rows="10" id="question_text" placeholder="Enter question here" name="question[text]"></textarea><br>
   
-    <input name="commit" type="submit" value="Post Question"/>
+    <br><br>
+    <input name="commit" type="submit" value="Post Your Question" class="btn btn-primary"/>
     <br><br>
   </form>
-  <%= button_to 'Cancel', questions_path, method: :get%>
+  
+  <%= link_to "Cancel", questions_path, :class => 'btn btn-danger'%>
 
   </div>
 </div>
