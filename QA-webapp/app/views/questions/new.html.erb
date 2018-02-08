@@ -1,21 +1,3 @@
-
-
-
-
- <% if @question.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@question.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @question.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,52 +8,49 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
-<%= form_with scope: :question, url: questions_path, local: true do |form| %>
+
 <div class="container">
-  <form action="/action_page.php">
     <div class="form-group">
-      <h2> New Question </h2>
-      <label for="title">Title:</label>
-      <input type="titleinput" class="form-control" id="title" placeholder="Enter title" name="title">
+
+    <form action="/questions" class="new_question" id="new_question" method="post">
+
+    <h2> New Question </h2><br>
+
+      <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@question.errors.count, "error") %> prohibited
+        this article from being saved:              
+      </h2>
+      <ul>
+        <% @question.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
     </div>
+  <% end %>
+
+    <br>
+    <input name="authenticity_token" type="hidden" value="NrOp5bsjoLRuK8IW5+dQEYjKGUJDe7TQoZVvq95Wteg=" />
+
+    <label for="title">Title:</label><br>
+    <input type="text" name="question[title]" type="title">
+    <br><br>
+
+    <label for="Content">Content:</label><br>
+    <textarea cols="85" rows="10" id="question_text" name="question[text]"></textarea><br>
+  
+    <input name="commit" type="submit" value="Post Question"/>
+    <br><br>
   </form>
+  <%= button_to 'Cancel', questions_path, method: :get%>
+
+  </div>
 </div>
-
-<div class="container"> 
-  <form>
-    <div class="form-group">
-      <label for="Content">Content:</label>
-      <textarea class="form-control" rows="5" id="Content"></textarea>
-    </div>
-      <button type="Post Question" class="btn btn-success">Post question</button>
-      <p>
-      <button type="Return to main page" class="btn btn-default">Cancel</button>
-  </form>
-</div>
-
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
- 
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
-  </p>
- 
-  <p>
-    <!--Not good yet since the message will appear even if a text has been entered.-->
-    <!--, method: :get, data: { confirm: 'Please enter a question.' }-->
-    <%= form.submit 'Post Question'%>
-  </p>
-<% end %>
-
-<!--Added the back button to give the user an option to go back to the main page if he doesn't want to write a question anymore-->
-<%= button_to 'Back', questions_path, method: :get%>
-
 
 </body>
 </html>
