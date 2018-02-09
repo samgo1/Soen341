@@ -12,7 +12,8 @@
 	<div class="question-body">
 		<%= truncate(question.text, length: 100) %>
 	</div>
-	
+	<div class="question-actions">
+		<%= link_to "Edit this question", edit_question_path(question), class: "btn btn-xs btn-primary" %>
 		
 		    </div>
 	  </div>
