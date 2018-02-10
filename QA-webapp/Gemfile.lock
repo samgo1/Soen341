@@ -69,8 +69,8 @@ GEM
     crass (1.0.3)
     erubi (1.7.0)
     execjs (2.7.0)
-    ffi (1.9.21)
-    ffi (1.9.21-x86-mingw32)
+    ffi (1.9.18)
+    ffi (1.9.18-x86-mingw32)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (0.9.4)
@@ -198,6 +198,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
+  ffi (= 1.9.18)
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
