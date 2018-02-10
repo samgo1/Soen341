@@ -1,12 +1,30 @@
-<h2> New Question </h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>New Question</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<%= form_with scope: :question, url: questions_path ,local: true do |form| %>
+</head>
 
- <% if @question.errors.any? %>
+<body>
+
+<div class="container">
+    <div class="form-group">
+
+    <form action="/questions" class="new_question" id="new_question" method="post">
+
+    <h2> New Question </h2><br>
+
+      <% if @question.errors.any? %>
     <div id="error_explanation">
       <h2>
         <%= pluralize(@question.errors.count, "error") %> prohibited
-        this article from being saved:
+        this article from being saved:              
       </h2>
       <ul>
         <% @question.errors.full_messages.each do |message| %>
@@ -15,22 +33,27 @@
       </ul>
     </div>
   <% end %>
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
- 
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
-  </p>
- 
-  <p>
-    <!--Not good yet since the message will appear even if a text has been entered.-->
-    <!--, method: :get, data: { confirm: 'Please enter a question.' }-->
-    <%= form.submit 'Post Question'%>
-  </p>
-<% end %>
 
-<!--Added the back button to give the user an option to go back to the main page if he doesn't want to write a question anymore-->
-<%= button_to 'Back', questions_path, method: :get%>
+    <br>
+    <input name="authenticity_token" type="hidden" value="NrOp5bsjoLRuK8IW5+dQEYjKGUJDe7TQoZVvq95Wteg=" />
+
+    <label for="title">Title:</label><br>
+    <input type="text" name="question[title]" placeholder="Enter title" type="title">
+    <br><br>
+
+    <label for="Content">Content:</label><br>        
+    <textarea cols="85" rows="10" id="question_text" placeholder="Enter question here" name="question[text]"></textarea><br>
+  
+    <br><br>
+    <input name="commit" type="submit" value="Post Your Question" class="btn btn-primary"/>
+    <br><br>
+  </form>
+  
+  <%= link_to "Cancel", questions_path, :class => 'btn btn-danger'%>
+
+  </div>
+</div>
+
+</body>
+</html>
+
