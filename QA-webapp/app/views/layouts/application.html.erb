@@ -10,7 +10,40 @@
 
   <body>
 
+  <nav class="navbar regular">
+		<div class="container">
+			<div class="navbar-header">
+				<%= link_to "Q&A WebApp", root_path, class: "navbar-brand" %>
+			</div>
+			<ul class="navbar-nav nav">
+				<li><%= link_to "Sign Up", root_path %></li>
+			<% if user_signed_in?%>
+					<li><%= link_to "Sign Out", destroy_user_path, method: :delete %></li>
+				<% else %>	
+					<li><%= link_to "Sign In", new_user_path %></li>
+				<% end %>    
+			</ul>
+			
+			<% if user_signed_in?%>
+			
+				<p>
+				<%= link_to "Ask Question", new_question_path, class: "navbar-text navbar-link navbar-right signedin" %>
+				</p>
+				<% else %>
+					<p>
+					<%= link_to "Ask Question", new_user_path, class: "navbar-text navbar-link navbar-right signedout" %>
+					</p>
+				<% end %>
+				
+			
+		</div>
+	</nav>
 
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+
+
+  
     <%= yield %>
   </body>
 </html>
