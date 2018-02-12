@@ -1,5 +1,53 @@
 
+/*
+= require_self
+= require_tree .
+*/
 
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+
+ .navbar {
+	font-family: 'Muli', sans-serif;
+	text-transform: uppercase;
+	//margin-top: -34px;	uncommenting it aligns the
+	//navbar with the top of screen but the questions/new page appears to
+	//have too much margin above "new question" and makes navbar buggy
+}
+
+.regular {
+
+	//padding-top: 5px;
+	//padding-bottom: 5px;
+	background-color: rgb(0, 174, 255);
+
+	.navbar-nav > li > a {
+		color: #222;
+	}
+
+	.navbar-link {
+		color: #222;
+	}
+
+	.navbar-brand {
+		color: #222;
+		letter-spacing: 1.5px;
+	}
+
+}
+
+	.signedout {
+		font-family: 'Muli', sans-serif;
+	text-transform: uppercase;
+		background-color: red;
+		font-size: large;
+	}
+
+	.signedin {
+		font-family: 'Muli', sans-serif;
+	text-transform: uppercase;
+		background-color: yellowgreen;
+		font-size: large;
+	}
