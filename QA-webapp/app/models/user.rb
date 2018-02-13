@@ -9,6 +9,7 @@ validates :password, presence: true, length: {minimum: 5}
     if existing_user != nil
       if existing_user.password == self.password
         self.id = existing_user.id
+        return true
       end
     end
     
