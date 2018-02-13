@@ -1,5 +1,9 @@
 class User < ApplicationRecord
   
+has_many :questions
+validates :username, presence: true, length: {minimum: 5}
+validates :password, presence: true, length: {minimum: 5}
+  
   def authenticate
     existing_user = User.find_by username: self.username
     if existing_user != nil
@@ -10,6 +14,5 @@ class User < ApplicationRecord
     
     return false
   end
-  
   
 end
