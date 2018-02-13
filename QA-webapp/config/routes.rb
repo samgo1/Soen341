@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'sessions/new'
+  get 'sessions/success'
+  post 'sessions' => 'sessions#create'
+
   resources :users
   root 'welcome#index', as: 'home'
   resources :questions
