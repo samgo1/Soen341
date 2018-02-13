@@ -1,11 +1,25 @@
-<!-- temporary location for the sign in button -->
-<%= button_to 'Sign in'%> 
-<h1> QA WebApp </h1>
-<%= button_to 'Ask a question', new_question_path, :method => :get %>
-<h2> All Questions </h2>
-<hr>
-<% @questions.each do |question|%>
-<h3> <%= link_to "#{question.title}", question  %> </h3>
-<h6> Date posted: <%= question.created_at %> </h6>
-<hr>
-<% end %>
+<h1 align="center"> Listing all Questions </h1>
+
+	
+
+<% @questions.each do |question| %>
+	<div class="row">
+		<div class="col-xs-6 col-xs-offset-4">
+			<div class="well well-lg">
+				<div class="question-title">
+		<%= link_to question.title, question_path(question) %>
+	</div>
+	<div class="question-body">
+		<%= truncate(question.text, length: 100) %>
+	</div>
+	<div class="question-actions">
+		<%= link_to "Edit this question", edit_question_path(question), class: "btn btn-xs btn-primary" %>
+		<%= link_to "Delete this question", question_path(question), method: :delete,
+																   data: {confirm: "Are you sure you want to delete the article?"},
+																   class: "btn btn-xs btn-danger" %>
+		
+		    </div>
+	  </div>
+    </div>
+</div>
+	<% end%>
