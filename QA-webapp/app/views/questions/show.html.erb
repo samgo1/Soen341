@@ -19,7 +19,10 @@
 
 		<h3>All Answers</h3>
 		<div class="container">
-			
+		  <%= render @question.answers %>
+ 
+      <h2>Leave an answer:</h2>
+      <%= render 'answers/form' %>
 		</div>
 
 		<br> <br>
@@ -27,4 +30,5 @@
 		<%= link_to "Return to main page", questions_path, :class => 'btn btn-primary'%>
 	</div>
 </body>
+
 
