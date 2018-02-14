@@ -6,3 +6,9 @@
 <%= button_to 'Delete', question_path(@question), method: :delete, 
 	data: { confirm: 'Are you sure?' }%> <br> <br>
 <%= button_to 'Back', questions_path, method: :get%>
+<h2>Answers</h2>
+<%= render @question.answers %>
+ 
+<h2>Leave an answer:</h2>
+<%= render 'answers/form' %>
+ 

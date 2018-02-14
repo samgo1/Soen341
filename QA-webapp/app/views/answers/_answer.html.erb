@@ -1,0 +1,14 @@
+
+<p>
+User
+<%= answer.user %>
+</p>
+
+<p>
+<%= answer.body %>
+</p>
+<p>
+  <%= link_to 'delete answer', [answer.question, question],
+               method: :delete,
+               data: { confirm: 'Are you sure you want to delete your answer?' } %>
+</p>
