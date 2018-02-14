@@ -1,0 +1,19 @@
+current directory: /Users/SebastienD/Desktop/Soen341/QA-webapp/vendor/cache/ruby/2.5.0/gems/byebug-10.0.0/ext/byebug
+/Users/SebastienD/.rvm/rubies/ruby-2.5.0/bin/ruby -r ./siteconf20180213-13279-ivvucz.rb extconf.rb
+creating Makefile
+
+current directory: /Users/SebastienD/Desktop/Soen341/QA-webapp/vendor/cache/ruby/2.5.0/gems/byebug-10.0.0/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/SebastienD/Desktop/Soen341/QA-webapp/vendor/cache/ruby/2.5.0/gems/byebug-10.0.0/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/SebastienD/Desktop/Soen341/QA-webapp/vendor/cache/ruby/2.5.0/gems/byebug-10.0.0/ext/byebug
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 byebug.bundle ./.gem.20180213-13279-1v8qt0f/byebug

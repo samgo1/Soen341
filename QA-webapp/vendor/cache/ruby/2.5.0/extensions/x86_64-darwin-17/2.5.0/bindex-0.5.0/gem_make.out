@@ -1,0 +1,15 @@
+current directory: /Users/SebastienD/Desktop/Soen341/QA-webapp/vendor/cache/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+/Users/SebastienD/.rvm/rubies/ruby-2.5.0/bin/ruby -r ./siteconf20180213-13279-i5v3ur.rb extconf.rb
+creating Makefile
+
+current directory: /Users/SebastienD/Desktop/Soen341/QA-webapp/vendor/cache/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /Users/SebastienD/Desktop/Soen341/QA-webapp/vendor/cache/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.bundle
+
+current directory: /Users/SebastienD/Desktop/Soen341/QA-webapp/vendor/cache/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20180213-13279-uo9zt7/bindex
