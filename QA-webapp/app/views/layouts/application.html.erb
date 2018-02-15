@@ -35,7 +35,7 @@
             
             <% if @user.nil?%>
                 <p>
-                <%= link_to "Ask Question", home_path, class: "navbar-text navbar-link navbar-right signedout btn btn-danger" %>
+                <%= link_to "Ask Question", sessions_new_path, class: "navbar-text navbar-link navbar-right signedout btn btn-danger" %>
                 </p>
                
              <% else %>
