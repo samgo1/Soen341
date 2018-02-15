@@ -1,26 +1,29 @@
 
-<div class="wrapper">
+<div class="wrapper sidebar-wrapper">
     <!-- Sidebar Holder -->
-    <div class="sidebar-wrapper">
-        <nav id="sidebar">
-            <div class="container-fluid">
-                <nav id="userpanel">
-                    <ul class="list-unstyled components">
-                        <li>
-                            <h3><a href='#'>User Name</a></h3>
-                        </li>
-                        <li>
-                            <a href="#">User questions</a>
-                        </li>
-                        <li>
-                            <a href="#">User answers</a>
-                        </li>
-                        <li>
-                            <a href="#">Messages</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </nav>
-    </div>
+    <nav id="sidebar">
+        <div class="userpanel-container well">
+            <% if @user.nil? %>
+                <ul class="list-unstyled components">
+                    <li>
+                        <h3>Logged in!</h3>
+                    <%#<%= link_to "#{@name}", edit_user_path(@user:id) %>
+                    </li>
+                    <li>
+                        <%= link_to "Your questions", questions_path %>
+                    </li>
+                    <li>
+                        <a href="#">Your answers</a>
+                    </li>
+                    <li>
+                        <a href="#">Your messages</a>
+                    </li>
+                </ul>
+            <% else %>
+                <h3>Anonymous</h3>
+                <p><%= link_to "Sign up", home_path %> for free to enjoy this QA website to the max!</p>
+                <p>If you already signed up, <%= link_to "log in", sessions_new_path %> to ask and answer questions!</p>
+            <%end%>
+        </div>
+    </nav>
 </div>
