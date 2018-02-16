@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'sessions/success'
   post 'sessions' => 'sessions#create'
+  delete 'sessions' => 'sessions#destroy'
 
   resources :users
   root 'welcome#index', as: 'home'
