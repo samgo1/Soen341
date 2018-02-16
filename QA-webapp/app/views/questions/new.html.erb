@@ -35,19 +35,23 @@
   <% end %>
 
     <br>
-    <input name="authenticity_token" type="hidden" value="NrOp5bsjoLRuK8IW5+dQEYjKGUJDe7TQoZVvq95Wteg=" />
 
-    <label for="title">Title:</label><br>
-    <input type="text" name="question[title]" placeholder="Enter title" type="title">
-    <br><br>
+    <%= form_with model: @question do |form| %>
 
-    <label for="Content">Content:</label><br>        
-    <textarea cols="85" rows="10" id="question_text" placeholder="Enter question here" name="question[text]"></textarea><br>
-  
+    <p>
+      <%= form.label :title %><br>
+      <%= form.text_field :title %>
+    </p>
+
+    <p>
+      <%= form.label :content %><br>
+      <%= form.text_area :text, cols: "85", rows: "10"%>
+    </p>
     <br><br>
-    <input name="commit" type="submit" value="Post Your Question" class="btn btn-primary"/>
+      <%= form.submit "Post Question", class: "btn btn-primary"%>
     <br><br>
   </form>
+  <%end %>
   
   <%= link_to "Cancel", questions_path, :class => 'btn btn-danger'%>
 

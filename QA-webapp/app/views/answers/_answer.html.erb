@@ -1,0 +1,18 @@
+
+<div id="mytext" style="margin-bottom: 40px">
+<h2>All Answers</h2>
+</div>
+
+<div class="container">
+<% @question.answers.each do |answer| %>
+    <div class="well">
+    	<div id="mytext" style="margin-bottom: 25px">
+    	<%= answer.body %>
+    </div>
+
+    <%= button_to 'delete answer', [answer.question, answer], method: :delete, 
+	data: { confirm: 'Are you sure?'}, class: 'btn btn-link' %>
+
+    </div>
+</div>
+<% end %>

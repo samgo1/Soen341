@@ -1,8 +1,53 @@
-<h2> <%= @question.title %> </h2>
-<p> <%= @question.text %> </p>
+
+<div class="container">
+<head>
+		<h1> <%= @question.title %> </h1>
+</head>
 <hr>
 <br>
-<%= button_to 'Edit', edit_question_path(@question), method: :get %>
-<%= button_to 'Delete', question_path(@question), method: :delete, 
-	data: { confirm: 'Are you sure?' }%> <br> <br>
-<%= button_to 'Back', questions_path, method: :get%>
+
+<body>
+	<div class="container">
+		<div class="well well-lg">
+		<p> <%= @question.text %> </p>
+		<br>
+
+		<div class="question_actions">
+		<br>
+		<%= link_to "Edit", edit_question_path(@question), method: :edit, class: "btn btn-primary" %>
+
+		<div id="mytext" style="margin-top: 10px">
+		<%= button_to 'Delete', question_path(@question), method: :delete, data: { confirm: 'Are you sure?' }, 
+					class: 'btn-sm btn-danger'%>
+				</div>
+			</br>
+		</div>
+	</div>
+	</div>
+
+	<!--CSS code to change the style of the lines-->
+	<style> 
+		hr{
+			width: 100%;
+			color: #000000;
+			height: 3px;
+		}
+	</style>
+
+	<hr> 
+		<%= render 'answers/answer' %>
+
+		<div id="mytext" style="margin-top: 68px"> <!--bottom margin in CSS coding-->
+		<%= render 'answers/form' %>
+	</div>
+
+	<div id="mytext" style="margin-top: 50px"> <!--bottom margin in CSS coding-->
+		<div id="mytext" style="margin-bottom: 65px">
+		<%= link_to "Return to main page", questions_path, :class => 'btn btn-primary'%>
+	</div>
+</div>
+</body>
+</div>
+
+
+
