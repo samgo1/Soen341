@@ -17,49 +17,6 @@
       
       <!-- start slipsum code
 
-<<<<<<< HEAD
-    <nav class="navbar regular">
-        <div class="container">
-           
-             <div class="navbar-header">
-                <%= link_to "Q&A WebApp", home_path, class: "navbar-brand" %>
-            </div>
-
-            <ul class="navbar-nav nav">
-                <li>
-                  <%= link_to "Sign Up", home_path %>
-                </li>
-
-              <% if @user.nil? %>
-                    <li>
-                        <%= link_to "Sign In", sessions_new_path %>
-                    </li>
-              <% else %>  
-                    <li>
-                      <%= link_to "Sign Out", users_destroy_path, method: :delete %>
-                      </li>
-              <% end %>    
-            </ul>
-            
-            <% if @user.nil?%>
-                <p>
-                <%= link_to "Ask Question", sessions_new_path, class: "navbar-text navbar-link navbar-right signedout btn btn-danger" %>
-                </p>
-               
-             <% else %>
-                    <p>
-                    <%= link_to "Ask Question", new_question_path, class: "navbar-text navbar-link navbar-right signedin btn btn-outline-success" %>
-                    </p>
-             <% end %>
-            
-        </div>
-    </nav>
-
-  <div class = "container">
-    <%= yield %>
-  </div> 
-
-=======
       <h3>I can do that</h3>
       <p>Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb. </p>
 
@@ -80,6 +37,5 @@
 
       end slipsum code -->
     </div>
->>>>>>> b7002db1a3e0cc966f3c44ee16e1395d9d8c30c6
   </body>
 </html>
