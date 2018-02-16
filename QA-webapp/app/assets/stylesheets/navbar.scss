@@ -1,0 +1,41 @@
+.navbar {
+    font-family: verdana, arial, helvetica, sans-serif;
+    text-transform: uppercase;
+    //padding-top: -33px;
+    margin-top: -55px;
+}
+
+.regular    {
+  background-color: black;
+  line-height: 1.2px;
+
+  .navbar-nav > li > a {
+      color: white;
+  }
+
+  .navbar-link    {
+      color: white;
+  }
+
+  .navbar-brand   {
+      color: white;
+      letter-spacing: 1.5px;
+  }
+
+  .signedout  {
+      //font-family:  verdana, arial, helvetica, sans-serif;
+      //text-transform: uppercase;
+      //background-color: yellow;
+      font-size: smaller;
+      margin-top: 10px;
+
+  }
+
+  .signedin   {
+      //font-family: verdana, arial, helvetica, sans-serif;
+      //text-transform: uppercase;
+      //background-color: yellowgreen;
+      font-size: smaller;
+      margin-top: 10px;
+  }
+}
