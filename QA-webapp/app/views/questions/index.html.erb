@@ -1,11 +1,36 @@
-<!-- temporary location for the sign in button -->
-<%= button_to 'Sign in'%> 
-<h1> QA WebApp </h1>
-<%= button_to 'Ask a question', new_question_path, :method => :get %>
-<h2> All Questions </h2>
-<hr>
-<% @questions.each do |question|%>
-<h3> <%= link_to "#{question.title}", question  %> </h3>
-<h6> Date posted: </h6>
-<hr>
-<% end %>
+
+<div id="mytext" style="margin-top: 30px">
+	<div id="mytext" style="margin-bottom: 30px">
+		<div id="mytext" style="margin-right: 165px">
+		<h1 align="center"> Listing all Questions </h1>	
+	</div>
+</div>
+</div>
+
+<div class="col-xs-6 col-xs-offset-2">
+
+<% @questions.each do |question| %>
+
+	<div class="row">
+
+		<div class="well well-lg">
+
+			<div align="center">
+			<div class="question-title">
+				<%= link_to question.title, question_path(question) %>
+			</div>
+
+				<div class="question-body">
+					<%= truncate(question.text, length: 30) %>
+				</div>
+			</div>
+			</div>
+    	</div>
+<% end%>
+
+<div id="mytext" style="margin-top: 30px"> <!--bottom margin in CSS coding-->
+	<div id="mytext" style="margin-bottom: 50px">
+	<%= link_to "Ask a Question", new_question_path, :class => 'btn btn-primary'%>
+</div>
+</div>
+</div>

@@ -25,17 +25,20 @@ class QuestionsController < ApplicationController
       render "new"
     end
   end
-  
+
   def update
     @question = Question.find(params[:id])
-    @question.update(question_params)
-      
-    redirect_to @question
+
+        if(@question.update(question_params))
+            redirect_to @question
+        else 
+            render 'edit'
+        end
   end
   
   def destroy
     @question = Question.find(params[:id])
-    @question.delete
+    @question.destroy
     
     redirect_to questions_path
   end
@@ -47,3 +50,5 @@ class QuestionsController < ApplicationController
       params.require(:question).permit(:title, :text)
     end
 end
+
+
