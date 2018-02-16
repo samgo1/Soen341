@@ -32,6 +32,12 @@
                       </li>
               <% end %>    
             </ul>
+
+            <div>
+            <li>
+                <%= link_to "Show Questions", questions_path, class: "navbar-text navbar-link showquestions btn btn-warning" %>
+            </li>
+            </div>
             
             <% if @user.nil?%>
                 <p>
