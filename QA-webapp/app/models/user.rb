@@ -15,5 +15,4 @@ validates :password, presence: true, length: {minimum: 5}
     
     return false
   end
-  
 end

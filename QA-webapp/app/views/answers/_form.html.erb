@@ -1,0 +1,10 @@
+
+<h3>Leave an answer</h3><br>
+<%= form_for([@question, @question.answers.build]) do |f| %>
+    <p>
+        <%= f.text_area :body, cols: "70", rows: "10"%>
+    </p>
+    <p>
+      <%= f.submit({:class => 'btn btn-default'}) %>
+    </p>
+ <% end %>        
