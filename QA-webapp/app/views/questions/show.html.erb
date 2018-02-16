@@ -1,34 +1,50 @@
+
+<h2><%= @question.title %></h2>
+<p><%= @question.text %></p>
+<hr>
+<%= link_to "Edit", edit_question_path(@question), :class => 'btn
+    btn-default' %>
+
+<%= link_to "Delete", questions_path(@question), 
+    method: :delete,
+    data: {confirm: 'Are you sure?'},
+    :class => 'btn btn-danger' %>
+<hr>
+
+<%= render 'answers/answer' %>
+<%= render 'answers/form' %>
+
+
+<!--
 <div class="container">
 <head>
-		<h2> <%= @question.title %> </h2>
+		<h1> <%= @question.title %> </h1>
 </head>
 <hr>
 <br>
 
 <body>
-	<div class="container">
+	
 		<p> <%= @question.text %> </p>
-		<br><br>
-		<div class="questions buttons">
+		<br>
 		<%= link_to "Edit", edit_question_path(@question), method: :edit, class: "btn btn-primary" %>
-		<%= link_to "Delete", question_path(@question), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %> <br>
-		</div>
 
-		<hr>
-		<br> <br>	
+		<%= link_to "Delete", question_path(@question), 
+			method: :delete, 
+			data: {confirm: "Are you sure?"}, 
+			class: 'btn btn-danger' %> <br>
 
-		<h3>All Answers</h3>
-		<div class="container">
-		  <%= render @question.answers %>
- 
-      <h2>Leave an answer:</h2>
-      <%= render 'answers/form' %>
-		</div>
 
-		<br> <br>
-		
+	<hr> 
+		<%= render 'answers/answer' %>
+		<%= render 'answers/form' %>
+
+	<div id="mytext" style="margin-top: 50px"> bottom margin in CSS coding
 		<%= link_to "Return to main page", questions_path, :class => 'btn btn-primary'%>
 	</div>
 </body>
+</div>
+-->
+<!--<div id="mytext" style="margin-top: 80px"> bottom margin in CSS coding
 
 
