@@ -1,11 +1,13 @@
 
 <div id="mytext" style="margin-top: 30px">
 	<div id="mytext" style="margin-bottom: 30px">
+		<div id="mytext" style="margin-right: 165px">
 		<h1 align="center"> Listing all Questions </h1>	
 	</div>
 </div>
+</div>
 
-<div class="col-xs-6 col-xs-offset-3">
+<div class="col-xs-6 col-xs-offset-2">
 
 <% @questions.each do |question| %>
 
@@ -27,6 +29,8 @@
 <% end%>
 
 <div id="mytext" style="margin-top: 30px"> <!--bottom margin in CSS coding-->
+	<div id="mytext" style="margin-bottom: 50px">
 	<%= link_to "Ask a Question", new_question_path, :class => 'btn btn-primary'%>
+</div>
 </div>
 </div>
