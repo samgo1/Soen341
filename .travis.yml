@@ -2,3 +2,8 @@ language: ruby
 rvm:
 	- 2.3.3
 	
+script:
+	- cd QA-webapp
+	- bundle install
+	- bin/rails db:migrate
+	- bin/rails server
