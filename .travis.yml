@@ -1,9 +1,9 @@
 language: ruby
 rvm:
-	- 2.3.3
-	
-script:
-	- cd QA-webapp
-	- bundle install
-	- bin/rails db:migrate
-	- bin/rails server
+  - 2.3
+env:
+  - DB=sqlite
+script: 
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec spec/
