@@ -3,20 +3,10 @@
     <!-- Sidebar Holder -->
     <nav id="sidebar">
         <div class="userpanel-container well">
-            <% if @user.nil? %>
+            <% if :user_signed_in? %>
                 <ul class="list-unstyled components">
                     <li>
                         <h3>Logged in!</h3>
-                    <%#<%= link_to "#{@name}", edit_user_path(@user:id) %>
-                    </li>
-                    <li>
-                        <%= link_to "Your questions", questions_path %>
-                    </li>
-                    <li>
-                        <a href="#">Your answers</a>
-                    </li>
-                    <li>
-                        <a href="#">Your messages</a>
                     </li>
                 </ul>
             <% else %>
