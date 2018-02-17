@@ -46,6 +46,8 @@ gem 'ffi', '1.9.18'
 
 
 group :development, :test do
+  # travisCI guide
+  gem 'rake'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
