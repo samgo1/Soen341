@@ -1,0 +1,39 @@
+   <nav class= "navbar regular navbar-fixed-top navbar-light bg-faded">
+        <div class="container">
+          <ul class="navbar-nav nav navbar-left">
+            <li>
+               <div class="navbar-header">
+                  <%= link_to "Q&A WebApp", home_path, class: "navbar-brand" %>
+              </div>
+            </li>
+            <li>
+              <%= link_to "Sign Up", home_path %>
+            </li>
+
+            <% if user_signed_in? == false %>
+                  <li>
+                      <%= link_to "Sign In", sessions_new_path %>
+                  </li>
+            <% else %>  
+              <li>
+                <%= link_to "Sign Out", sessions_path, method: 'delete' %>
+              </li>
+            <% end %>    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            <li>
+                <%= link_to "Show Questions", questions_path, class: "navbar-text navbar-link showquestions btn btn-warning" %>
+            </li>
+
+            <% if user_signed_in? == false%>
+                <li>
+                <%= link_to "Ask Question", sessions_new_path, class: "navbar-text navbar-link navbar-right signedout btn btn-danger" %>
+                </li>
+             <% else %>
+                <li>
+                <%= link_to "Ask Question", new_question_path, class: "navbar-text navbar-link navbar-right signedin btn btn-success" %>
+                </li>
+             <% end %>
+           </ul>
+        </div>
+    </nav>
