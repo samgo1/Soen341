@@ -21,7 +21,12 @@
 			</div>
 
 				<div class="question-body">
-					<%= truncate(question.text, length: 30) %>
+					<%= truncate(question.text, length: 100) %>
+					<div class= "question-meta-details">
+						<small>Created by: <%= question.user.username if question.user %>,
+						     	<%= time_ago_in_words(question.created_at) %> ago,
+						     	last updated: <%= time_ago_in_words(question.updated_at) %> ago</small>
+				  </div>
 				</div>
 			</div>
 			</div>
