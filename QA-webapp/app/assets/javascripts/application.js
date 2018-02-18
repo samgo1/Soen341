@@ -12,6 +12,8 @@
 //
 
 //= require jquery
+	/* had to add line 16 for link_to problem on navbar */
+//= require jquery_ujs 
 //= require bootstrap-sprockets             
 //= require turbolinks
 //= require_tree .
