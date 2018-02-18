@@ -18,6 +18,7 @@ class QuestionsController < ApplicationController
   
   def create
     @question = Question.new(question_params) 
+    @question.user = User.first
     
     if @question.save
       redirect_to questions_path
