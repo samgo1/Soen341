@@ -205,6 +205,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   puma (~> 3.7)
   rails (~> 5.1.4)
+  rake
   sass-rails (~> 5.0)
   selenium-webdriver
   simple_form (~> 3.5)

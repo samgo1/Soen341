@@ -1,10 +1,4 @@
 language: ruby
 rvm:
  	 - 2.3
-env:
-  	- DB=sqlite
-script:
-	- cd QA-webapp/
-  	- bundle install
-	- bin/rails db:migrate
- 	- bin/rails server
+
