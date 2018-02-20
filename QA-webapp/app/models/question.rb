@@ -10,4 +10,11 @@ class Question < ApplicationRecord
         User.find(self.user_id)
       end
     end
+    
+    def belongs_to(user)
+      if user.id == self.user_id
+        return true
+      end
+      return false
+    end
 end

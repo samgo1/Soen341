@@ -14,11 +14,15 @@
 
 		<div class="question_actions">
 		<br>
-		<%= link_to "Edit", edit_question_path(@question), class: "btn btn-primary" %>
+		<%= if @question.belongs_to(current_user) 
+				link_to "Edit", edit_question_path(@question), class: "btn btn-primary"
+			end %>
 
 		<div id="mytext" style="margin-top: 10px">
-		<%= button_to 'Delete', question_path(@question), method: :delete, data: { confirm: 'Are you sure?' }, 
-					class: 'btn-sm btn-danger'%>
+		<%= if @question.belongs_to(current_user)
+				button_to 'Delete', question_path(@question), method: :delete, data: { confirm: 'Are you sure?' }, 
+				class: 'btn-sm btn-danger'
+			end %>
 				</div>
 			</br>
 		</div>
