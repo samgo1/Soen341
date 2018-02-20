@@ -12,6 +12,9 @@ class Question < ApplicationRecord
     end
     
     def belongs_to(user)
+      if user == nil
+        return false
+      end
       if user.id == self.user_id
         return true
       end
