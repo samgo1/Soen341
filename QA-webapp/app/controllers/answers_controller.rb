@@ -14,6 +14,7 @@ class AnswersController < ApplicationController
 
     private
         def answer_params
-            params.require(:answer).permit(:user, :body)
+          params[:answer][:user_id] = current_user.id
+          params.require(:answer).permit(:user_id, :body)
         end
 end
