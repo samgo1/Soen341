@@ -14,12 +14,12 @@
 
 		<div class="question_actions">
 		<br>
-		<%= if @question.belongs_to(current_user) 
+		<%= if @question.user.blank? == false && @question.user.id == current_user.id 
 				link_to "Edit", edit_question_path(@question), class: "btn btn-primary"
 			end %>
 
 		<div id="mytext" style="margin-top: 10px">
-		<%= if @question.belongs_to(current_user)
+		<%= if @question.user.blank? == false && @question.user.id == current_user.id 
 				button_to 'Delete', question_path(@question), method: :delete, data: { confirm: 'Are you sure?' }, 
 				class: 'btn-sm btn-danger'
 			end %>
