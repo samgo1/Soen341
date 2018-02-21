@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   
-has_many :questions
+has_many :questions, dependent: :destroy
+has_many :answers, dependent: :destroy
 validates :username, presence: true, length: {minimum: 5}
 validates :password, presence: true, length: {minimum: 5}
   
