@@ -23,14 +23,12 @@
 				<div class="question-body">
 					<%= truncate(question.text, length: 30) %>
 				</div>
+				<div class="question-author text-left">
+					<p>Asked by: <%= question.user.username unless question.user == nil %> </p>
+				</div>
 			</div>
 			</div>
     	</div>
 <% end%>
 
-<div id="mytext" style="margin-top: 30px"> <!--bottom margin in CSS coding-->
-	<div id="mytext" style="margin-bottom: 50px">
-	<%= link_to "Ask a Question", new_question_path, :class => 'btn btn-primary'%>
-</div>
-</div>
 </div>
