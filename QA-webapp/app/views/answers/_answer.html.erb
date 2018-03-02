@@ -7,11 +7,14 @@
 <% @question.answers.each do |answer| %>
     <div class="well">
     	<div id="mytext" style="margin-bottom: 25px">
-    	<%= answer.body %>
-    </div>
+			<p>Answer by: <%= answer.user.username unless answer.user.blank? %></p>
+    		<%= answer.body %>
+   	 	</div>
 
-    <%= button_to 'delete answer', [answer.question, answer], method: :delete, 
-	data: { confirm: 'Are you sure?'}, class: 'btn btn-link' %>
+    <%= if user_signed_in? && answer.user.id == current_user.id 
+			button_to 'delete answer', [answer.question, answer], method: :delete, 
+			data: { confirm: 'Are you sure?'}, class: 'btn btn-link'
+		end %>
 
     </div>
 </div>

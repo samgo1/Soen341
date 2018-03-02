@@ -1,38 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  
-  <title>Edit Question</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-</head>
-
-<body>
-  <div class="container">
+<div class="container">
 
   <h2>Edit Question</h2><br>
    
   <%= form_with model: @question do |form| %>
 
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
+    <p>
+      <%= form.label :title %><br>
+      <%= form.text_field :title %>
+    </p>
 
-  <p>
-    <%= form.label :content %><br>
-    <%= form.text_area :text, cols: "85", rows: "10"%>
-  </p>
- 
-  <p>
-  <%= form.submit "Edit Question", class: "btn btn-primary"%>
-  </p>
-   <%= link_to "Cancel", question_path, :class => 'btn btn-danger'%>
-<% end %>
+    <p>
+      <%= form.label :content %><br>
+      <%= form.text_area :text, cols: "85", rows: "10"%>
+    </p>
+   
+    <p>
+      <%= form.submit "Edit Question", class: "btn btn-primary"%>
+    </p>
+    <%= link_to "Cancel", question_path, :class => 'btn btn-danger'%>
+  <% end %>
 </div>
-</body>
-</html>

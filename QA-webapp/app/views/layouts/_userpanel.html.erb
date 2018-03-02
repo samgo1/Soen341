@@ -3,17 +3,18 @@
     <!-- Sidebar Holder -->
     <nav id="sidebar">
         <div class="userpanel-container well">
-            <% if :user_signed_in? %>
+            <% if user_signed_in? %>
                 <ul class="list-unstyled components">
                     <li>
-                        <h3>Logged in!</h3>
+                        <h3> Hello </br> 
+                            <%= link_to "#{current_user.username}", edit_user_path(current_user) %></h3>
                     </li>
                 </ul>
             <% else %>
                 <h3>Anonymous</h3>
                 <p><%= link_to "Sign up", home_path %> for free to enjoy this QA website to the max!</p>
                 <p>If you already signed up, <%= link_to "log in", sessions_new_path %> to ask and answer questions!</p>
-            <%end%>
+            <% end %>
         </div>
     </nav>
 </div>
