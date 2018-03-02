@@ -1,20 +1,19 @@
 <%= flash[:notice] %> <!-- when a user logs out -->
-<div class="jumbotron">
+<div class="jumbotron welcome-div">
 	<div class='text-center'>
   	  <h1 class="display-4">Welcome to our Q & A site!</h1>
-	  <p class="lead">On this application you can post your questions and answers folks' questions</p>
+	  <p class="lead">On this this site, you can post your questions and answer other people's questions!</p>
   	</div>
   	<hr class="my-4">
   	<div class="text-center">
-  	  	<p>Before you can do all this awesome stuff you have to sign up. If you don't want to sign up 			now, you can still view the questions asked.</p>
+  	  	<p>Before you can do all this awesome stuff though, you will have to sign up.</p>
+				<p> If you don't want to sign up now, you can still view the questions asked.</p>
   <br><br><br><br>
   	</div>
   <!-- insert some ruby code for the form instead of HTML -->
 
 <%= render 'users/form', user: @user %>
-
   <form>
-
 		<div class="text-center">
 			<br><br>
 			<a type="button" class="btn btn-primary" href="/questions">I don't want to sign-up</a>

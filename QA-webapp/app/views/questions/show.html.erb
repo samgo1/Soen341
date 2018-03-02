@@ -1,36 +1,33 @@
 
 <div class="container">
-<head>
-		<h1> <%= @question.title %> </h1>
-</head>
-<hr>
-<br>
+	<h1> <%= @question.title %> </h1>
 
-<body>
+	<hr>
+	<br>
 	<div class="container">
 		<div class="well well-lg">
-		<p> <%= @question.text %> </p>
-		<br>
+			<p> <%= @question.text %> </p>
+			<br>
 
-		<div class="question_actions">
-		<br>
-		<%= if user_signed_in? && @question.user.id == current_user.id 
-				link_to "Edit", edit_question_path(@question), class: "btn btn-primary"
-			end %>
+			<div class="question_actions">
+				<br>
+				<%= if user_signed_in? && @question.user.id == current_user.id
+						link_to "Edit", edit_question_path(@question), class: "btn btn-primary"
+					end %>
 
-		<div id="mytext" style="margin-top: 10px">
-		<%= if user_signed_in? && @question.user.id == current_user.id 
-				button_to 'Delete', question_path(@question), method: :delete, data: { confirm: 'Are you sure?' }, 
-				class: 'btn-sm btn-danger'
-			end %>
+				<div style="margin-top: 10px">
+				<%= if user_signed_in? && @question.user.id == current_user.id
+						button_to 'Delete', question_path(@question), method: :delete, data: { confirm: 'Are you sure?' },
+						class: 'btn-sm btn-danger'
+					end %>
 				</div>
-			</br>
+				<br>
+			</div>
 		</div>
-	</div>
 	</div>
 
 	<!--CSS code to change the style of the lines-->
-	<style> 
+	<style>
 		hr{
 			width: 100%;
 			color: #000000;
@@ -38,20 +35,16 @@
 		}
 	</style>
 
-	<hr> 
+	<hr>
 		<%= render 'answers/answer' %>
 
-		<div id="mytext" style="margin-top: 68px"> <!--bottom margin in CSS coding-->
-		<%= render 'answers/form' unless user_signed_in? == false %>
-	</div>
+		<div style="margin-top: 68px"> <!--bottom margin in CSS coding-->
+			<%= render 'answers/form' unless user_signed_in? == false %>
+		</div>
 
-	<div id="mytext" style="margin-top: 50px"> <!--bottom margin in CSS coding-->
-		<div id="mytext" style="margin-bottom: 65px">
-		<%= link_to "Return to main page", questions_path, :class => 'btn btn-primary'%>
+		<div style="margin-top: 50px"> <!--bottom margin in CSS coding-->
+			<div style="margin-bottom: 65px">
+			<%= link_to "Return to main page", questions_path, :class => 'btn btn-primary'%>
+		</div>
 	</div>
 </div>
-</body>
-</div>
-
-
-
