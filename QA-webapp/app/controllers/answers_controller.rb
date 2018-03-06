@@ -22,11 +22,9 @@ class AnswersController < ApplicationController
         redirect_to question_path(@question)
     end
 
-    #upvote_from user
-    #downvote_from user
-
+    # Thumbs-up voting that is assigned to each user
     def upvote
-        @answer.upvote_from current_user
+        @answer.upvote_from current_user # a user cannot vote more than one time
         redirect_to request.referrer 
     end
 
