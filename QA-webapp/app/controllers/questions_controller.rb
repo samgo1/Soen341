@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
   
   def index
-    @questions = Question.all
+    @questions = Question.paginate(page: params[:page], per_page: 5)
   end
 
   def show
@@ -17,7 +17,8 @@ class QuestionsController < ApplicationController
   end
   
   def create
-    @question = Question.new(question_params) 
+    @question = Question.new(question_params)
+    @question.user_id = current_user.id
     
     if @question.save
       redirect_to questions_path

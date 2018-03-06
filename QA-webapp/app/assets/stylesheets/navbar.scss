@@ -1,44 +1,32 @@
 .navbar {
-    font-family: verdana, arial, helvetica, sans-serif;
     text-transform: uppercase;
-}
 
-.regular    {
-  background-color: black;
-  line-height: 1.2px;
+    .navbar-nav > li > a {
+        color: white;
+    }
 
-  .navbar-nav > li > a {
-      color: white;
-  }
+    .navbar-link    {
+        color: white;
+    }
 
-  .navbar-link    {
-      color: white;
-  }
+    .navbar-brand   {
+        color: white;
+        letter-spacing: 1.5px;
+    }
 
-  .navbar-brand   {
-      color: white;
-      letter-spacing: 1.5px;
-  }
+    .signedout  {
+        font-size: smaller;
+        margin-top: 10px;
 
-  .signedout  {
-      //font-family:  verdana, arial, helvetica, sans-serif;
-      //text-transform: uppercase;
-      //background-color: yellow;
+    }
+
+    .signedin   {
+        font-size: smaller;
+        margin-top: 10px;
+    }
+
+    .showquestions    {
       font-size: smaller;
       margin-top: 10px;
-
-  }
-
-  .signedin   {
-      //font-family: verdana, arial, helvetica, sans-serif;
-      //text-transform: uppercase;
-      //background-color: yellowgreen;
-      font-size: smaller;
-      margin-top: 10px;
-  }
-
-  .showquestions    {
-    font-size: smaller;
-    margin-top: 10px;
-  }
+    }
 }

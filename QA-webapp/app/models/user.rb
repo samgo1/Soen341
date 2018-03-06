@@ -1,9 +1,11 @@
 class User < ApplicationRecord
   
-has_many :questions
+has_many :questions, dependent: :destroy
 validates :username, presence: true, 
            uniqueness: { case_sensitive: false}, 
            length: {minimum: 3, maximum: 25}
+
+has_many :answers, dependent: :destroy
 validates :password, presence: true, length: {minimum: 5}
 VALID_EMAIL_REGEX= /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 validates :email, presence: true, length: {maximum: 105},
