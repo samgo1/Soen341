@@ -27,7 +27,7 @@ class AnswersController < ApplicationController
 
     def upvote
         @answer.upvote_from current_user
-        redirect_to request.referrer
+        redirect_to request.referrer 
     end
 
     def downvote 
