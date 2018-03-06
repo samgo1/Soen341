@@ -22,11 +22,11 @@
 					end %>
 				</div>
 				<br>
+
 			</div>
 		</div>
-	</div>
 
-	<!--CSS code to change the style of the lines-->
+<!--CSS code to change the style of the lines-->
 	<style>
 		hr{
 			width: 100%;
@@ -38,7 +38,7 @@
 	<hr>
 		<%= render 'answers/answer' %>
 
-		<div style="margin-top: 68px"> <!--bottom margin in CSS coding-->
+		<div style="margin-top: 45px"> <!--bottom margin in CSS coding-->
 			<%= render 'answers/form' unless user_signed_in? == false %>
 		</div>
 
@@ -46,5 +46,7 @@
 			<div style="margin-bottom: 65px">
 			<%= link_to "Return to main page", questions_path, :class => 'btn btn-primary'%>
 		</div>
+	</div>
+
 	</div>
 </div>
