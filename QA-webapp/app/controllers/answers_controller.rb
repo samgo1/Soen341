@@ -3,7 +3,7 @@ class AnswersController < ApplicationController
     before_action :set_answer, only: [:destroy, :upvote, :downvote]
 
     def index
-        @answers = Answer.all
+        @answers = Answer.all.order(:cached_votes_up => :desc)
     end
 
     def new
