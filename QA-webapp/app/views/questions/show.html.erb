@@ -1,10 +1,7 @@
 
-<div class="container">
 	<h1> <%= @question.title %> </h1>
-
 	<hr>
 	<br>
-	<div class="container">
 		<div class="well well-lg">
 			<p> <%= @question.text %> </p>
 			<br>
@@ -25,16 +22,6 @@
 
 			</div>
 		</div>
-
-<!--CSS code to change the style of the lines-->
-	<style>
-		hr{
-			width: 100%;
-			color: #000000;
-			height: 3px;
-		}
-	</style>
-
 	<hr>
 		<%= render 'answers/answer' %>
 
@@ -47,6 +34,3 @@
 			<%= link_to "Return to main page", questions_path, :class => 'btn btn-primary'%>
 		</div>
 	</div>
-
-	</div>
-</div>

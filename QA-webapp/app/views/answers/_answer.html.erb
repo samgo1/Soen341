@@ -1,9 +1,9 @@
 
+
 <div id="mytext" style="margin-bottom: 40px">
 <h2>All Answers</h2>
 </div>
 
-<div class="container">
 <% @question.answers.each do |answer| %>
     <div class="well">
     	<div id="mytext" style="margin-bottom: 25px">
@@ -14,7 +14,6 @@
 
         <div class="caption" style="text-align:left;">
 
-            
             <%= link_to like_answer_path(answer), class: "like", method: :put do %>
                 <button type="button" class="btn btn-primary" aria-label="Left Align">
                     <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
@@ -35,7 +34,6 @@
 			button_to 'delete answer', [answer.question, answer], method: :delete, 
 			data: { confirm: 'Are you sure?'}, class: 'btn btn-link'
 		end %>
-
     </div>
 <% end %>
-</div>
+
