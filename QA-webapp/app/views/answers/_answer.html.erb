@@ -4,7 +4,7 @@
 <h2>All Answers</h2>
 </div>
 
-<% @question.answers.each do |answer| %>
+<% @question.answers.order(cached_votes_score: :desc).each do |answer| %>
     <div class="well">
     	<div id="mytext" style="margin-bottom: 25px">
 			<p>Answered by: <%= answer.user.username unless answer.user.blank? %></p>
