@@ -26,16 +26,16 @@ The View layer is composed of "templates" that are responsible for providing app
 Active Record, Active Model, Action Pack, and Action View can each be used independently outside Rails. In addition to that, Rails also comes with Action Mailer (README), a library to generate and send emails; Active Job (README), a framework for declaring jobs and making them run on a variety of queueing backends; Action Cable (README), a framework to integrate WebSockets with a Rails application; Active Storage (README), a library to attach cloud and local files to Rails applications; and Active Support (README), a collection of utility classes and standard library extensions that are useful for Rails, and may also be used independently outside Rails.
 
 * References: 
-			  https://github.com/rails/rails/blob/master/README.md
-			  http://guides.rubyonrails.org/getting_started.html
+*			  https://github.com/rails/rails/blob/master/README.md
+*			  http://guides.rubyonrails.org/getting_started.html
 
 # Coding Style
 
 Coding style used in the development of our web application is based on the following guides.
 
 * References: 
-			  https://github.com/airbnb/ruby
-			  https://github.com/bbatsov/rails-style-guide
+*			  https://github.com/airbnb/ruby
+*			  https://github.com/bbatsov/rails-style-guide
 
 
 
