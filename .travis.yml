@@ -1,0 +1,4 @@
+before_install: cd QA-webapp/
+language: ruby
+rvm:
+	- 2.3
