@@ -28,12 +28,27 @@ class AnswersController < ApplicationController
         redirect_to request.referrer 
     end
 
+
     def downvote 
         @answer.downvote_from current_user
-        redirect_to request.referrer
+        if(answer_rejected?)
+            @answer.destroy
+            redirect_to request.referrer
+        else
+            redirect_to request.referrer
+        end
     end
 
     private
+        def answer_rejected?
+            @total = @answer.cached_votes_total
+            if(@total > 3 && @answer.cached_votes_down > 0.6 * @total)
+                return true
+            else
+                return false
+            end
+                
+        end
 
         def set_answer
             @answer = Answer.find(params[:id])
