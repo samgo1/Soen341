@@ -3,10 +3,16 @@ class User < ApplicationRecord
 acts_as_voter
   
 has_many :questions, dependent: :destroy
-has_many :answers, dependent: :destroy
-validates :username, presence: true, length: {minimum: 5}
-validates :password, presence: true, length: {minimum: 5}
+validates :username, presence: true, 
+           uniqueness: { case_sensitive: false}, 
+           length: {minimum: 3, maximum: 25}
 
+has_many :answers, dependent: :destroy
+validates :password, presence: true, length: {minimum: 5}
+VALID_EMAIL_REGEX= /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+validates :email, presence: true, length: {maximum: 105},
+          uniqueness: { case_sensitive: false },
+          format: { with: VALID_EMAIL_REGEX }  
   def authenticate
     existing_user = User.find_by username: self.username
     if existing_user != nil
@@ -19,3 +25,5 @@ validates :password, presence: true, length: {minimum: 5}
     return false
   end
 end
+
+

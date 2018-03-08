@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /users/1
@@ -28,8 +28,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
+        format.html {redirect_to sessions_success_path}
+        session[:current_user_username] = @user.username
+        session[:current_user_id] = @user.id
       else
         format.html { redirect_to home_path }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -69,6 +70,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :password)
+      params.require(:user).permit(:username, :email, :password)
     end
 end

@@ -5,6 +5,11 @@
 		</div>
 	</div>
 </div>
+<div class="col-xs-6 col-xs-offset-2">
+	<div align="center">
+	<%= will_paginate %>
+	</div>
+</div>
 
 <div class="col-xs-6 col-xs-offset-2">
 
@@ -21,12 +26,19 @@
 					<div class="question-body">
 						<%= truncate(question.text, length: 30) %>
 					</div>
-					<div class="question-author text-left">
-						<p align="center">Asked by: <%= question.user.username unless question.user == nil %> </p>
+					<div class="question-meta-details">
+					<small><p>Asked by: <%= question.user.username unless question.user == nil %>
+					<%=       time_ago_in_words(question.created_at) %> ago,
+					last updated: <%= time_ago_in_words(question.updated_at) %> ago</small>
+					 </p>
 					</div>
 				</div>
 			</div>
 		</div>
 	<% end%>
 
+	<div align="center">
+		<%= will_paginate %>
+	</div>
 </div>
+
