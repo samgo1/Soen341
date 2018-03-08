@@ -34,8 +34,8 @@ Active Record, Active Model, Action Pack, and Action View can each be used indep
 Coding style used in the development of our web application is based on the following guides.
 
 * References: 
-*			[Ruby Style Guide](https://github.com/airbnb/ruby)
-*			[Rails Style Guide](https://github.com/bbatsov/rails-style-guide)
+		[Ruby Style Guide](https://github.com/airbnb/ruby)
+		[Rails Style Guide](https://github.com/bbatsov/rails-style-guide)
 
 
 
