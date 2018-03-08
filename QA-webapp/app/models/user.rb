@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+
+acts_as_voter
   
 has_many :questions, dependent: :destroy
 validates :username, presence: true, 
