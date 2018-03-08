@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/samgo1/Soen341.svg?branch=master)](https://travis-ci.org/samgo1/Soen341)
 # Objective
 Develop an intuitive Questions & Answers website.
 
