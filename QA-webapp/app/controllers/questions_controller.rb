@@ -9,6 +9,11 @@ class QuestionsController < ApplicationController
   end
   
   def new
+    if user_signed_in? == false
+      flash[:notice] = "You must be signed in to ask a question."
+      redirect_to home_path
+    end
+    
     @question = Question.new
   end
   
