@@ -9,11 +9,20 @@ class QuestionsController < ApplicationController
   end
   
   def new
+    if user_signed_in? == false
+      flash[:notice] = "You must be signed in to ask a question."
+      redirect_to home_path
+    end
+    
     @question = Question.new
   end
   
   def edit
     @question = Question.find(params[:id])
+    unless user_signed_in? && current_user.id == @question.user.id
+      flash[:notice] = "You must own the question to modify it."
+      redirect_to home_path
+    end
   end
   
   def create
