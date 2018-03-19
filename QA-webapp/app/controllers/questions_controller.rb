@@ -19,6 +19,10 @@ class QuestionsController < ApplicationController
   
   def edit
     @question = Question.find(params[:id])
+    unless user_signed_in? && current_user.id == @question.user.id
+      flash[:notice] = "You must own the question to modify it."
+      redirect_to home_path
+    end
   end
   
   def create
