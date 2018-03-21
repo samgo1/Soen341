@@ -24,10 +24,10 @@ class AnswersController < ApplicationController
 
     # Thumbs-up voting that is assigned to each user
     def upvote
-        @answer.upvote_from current_user # a user cannot vote more than one time
+        # a user cannot vote more than one time
+        @answer.upvote_from current_user 
         redirect_to request.referrer 
     end
-
 
     def downvote 
         @answer.downvote_from current_user
@@ -46,8 +46,7 @@ class AnswersController < ApplicationController
                 return true
             else
                 return false
-            end
-                
+            end   
         end
 
         def set_answer

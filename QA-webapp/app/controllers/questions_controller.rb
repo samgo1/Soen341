@@ -13,7 +13,6 @@ class QuestionsController < ApplicationController
       flash[:notice] = "You must be signed in to ask a question."
       redirect_to home_path
     end
-    
     @question = Question.new
   end
   
@@ -38,7 +37,6 @@ class QuestionsController < ApplicationController
 
   def update
     @question = Question.find(params[:id])
-
         if(@question.update(question_params))
             redirect_to @question
         else 
@@ -49,7 +47,6 @@ class QuestionsController < ApplicationController
   def destroy
     @question = Question.find(params[:id])
     @question.destroy
-    
     redirect_to questions_path
   end
   
