@@ -1,14 +1,17 @@
+<!--Sign in page-->
+
 <h1 class="text-center"> Create a new session</h1>
 
+<div align="center">
 <%= @login_error_message %><br />
 
 <%= form_for :user, url: sessions_path do |f| %>
 <%= 	f.label :username %>
-<%=		f.text_field :username %><br />
+<%=		f.text_field :username %><br/>
 <%=		f.label :password %>
-<%=		f.password_field :password %><br />
-
+<%=		f.password_field :password %><br><br>
 <%=		f.submit 'Log-in' %><br />
 <% end %>
 
 <%= link_to "I don't have an account yet", home_path %>
+</div>

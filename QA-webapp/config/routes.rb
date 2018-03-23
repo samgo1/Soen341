@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  
   get 'sessions/new'
   get 'sessions/success'
   post 'sessions' => 'sessions#create'
@@ -8,6 +7,10 @@ Rails.application.routes.draw do
   resources :users
   root 'welcome#index', as: 'home'
   resources :questions do
+    member do
+      put "like" => "questions#upvote"
+      put "unlike" => "questions#downvote"
+    end
     resources :answers
   end
 
@@ -15,8 +18,7 @@ Rails.application.routes.draw do
     member do
       put "like" => "answers#upvote"
       put "unlike" => "answers#downvote"
+      end
   end
-end
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
