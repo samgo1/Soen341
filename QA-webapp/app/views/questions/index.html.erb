@@ -35,19 +35,19 @@ a sample of the question and information about who asked the question (when and 
 					</div>
 					<div class="caption" style="text-align:center;">
 
-							<%= link_to like_question_path(question), class: "like", method: :put do %>
-								<button type="button" class="btn btn-primary" aria-label="Left Align">
-									<span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
-									<span class="badge"> <%= question.get_upvotes.size %> </span>
-							</button>
-							<% end %>
+						<%= link_to like_question_path(question), class: "like", method: :put do %>
+							<button type="button" class="btn btn-primary" aria-label="Left Align">
+								<span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+								<span class="badge"> <%= question.get_upvotes.size %> </span>
+						</button>
+						<% end %>
 
-							<%= link_to unlike_question_path(question), class: "like", method: :put do %>
-								<button type="button" class="btn btn-primary" aria-label="Left Align">
-									<span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
-									<span class="badge"> <%= question.get_downvotes.size %> </span>
-								</button>
-							<% end %>
+						<%= link_to unlike_question_path(question), class: "like", method: :put do %>
+							<button type="button" class="btn btn-primary" aria-label="Left Align">
+								<span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
+								<span class="badge"> <%= question.get_downvotes.size %> </span>
+							</button>
+						<% end %>
 
         			</div> 
 				</div>

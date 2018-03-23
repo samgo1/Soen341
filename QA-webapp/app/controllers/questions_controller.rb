@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.paginate(page: params[:page], per_page: 5)
   end
-
+ 
   def show
   end
   
@@ -18,11 +18,10 @@ class QuestionsController < ApplicationController
       flash[:notice] = "You must be signed in to ask a question."
       redirect_to home_path
     end
-    @question = Question.new
+      @question = Question.new
   end
   
   def edit
-    @question = Question.find(params[:id])
     unless user_signed_in? && current_user.id == @question.user.id
       flash[:notice] = "You must own the question to modify it."
       redirect_to home_path
@@ -41,12 +40,11 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    @question = Question.find(params[:id])
-        if @question.update(question_params)
-            redirect_to @question
-        else 
-            render 'edit'
-        end
+    if @question.update(question_params)
+      redirect_to @question
+    else 
+      render 'edit'
+    end
   end
   
   def destroy
@@ -60,11 +58,10 @@ class QuestionsController < ApplicationController
   end
   def downvote
     @question.downvote_from current_user
-    if(question_rejected?)
-        @question.destroy
-        redirect_to request.referrer
-    else
-        redirect_to request.referrer
+    if question_rejected?
+      @question.destroy
+    end
+      redirect_to request.referrer
     end
   end
   # the objects needs these parameters in order to be saved to the DB
@@ -75,7 +72,7 @@ class QuestionsController < ApplicationController
     
     def question_rejected?
       @total = @question.cached_votes_total
-      if(@total > 10 && @question.cached_votes_down > 0.6 * @total)
+      if @total > 10 && @question.cached_votes_down > 0.6 * @total
           return true
       else
           return false
