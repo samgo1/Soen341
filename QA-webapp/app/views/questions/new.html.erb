@@ -1,11 +1,13 @@
 
+<!--Ask question page which contains basically the same features and contents as the edit question page.
+One difference is that the post question buttons is on this page instead of edit question.-->
+
 <div class="container">
     <div class="form-group">
-
     <form action="/questions" class="new_question" id="new_question" method="post">
-
+      
     <h2> New Question </h2><br>
-
+    <!--Error detection algorithm-->
       <% if @question.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -21,16 +23,13 @@
   <% end %>
 
     <br>
-
     <%= form_with model: @question do |form| %>
-
     <p>
-      <%= form.label :title %><br>
-      <%= form.text_field :title %>
+      <%= form.label :title%><br>
+      <%= form.text_field :title%>
     </p>
-
     <p>
-      <%= form.label :content %><br>
+      <%= form.label :content%><br>
       <%= form.text_area :text, cols: "85", rows: "10"%>
     </p>
     <br><br>
@@ -38,7 +37,7 @@
     <br><br>
   </form>
   <%end %>
-  
+
   <%= link_to "Cancel", questions_path, :class => 'btn btn-danger'%>
 
   </div>
