@@ -1,5 +1,12 @@
+<!--Interface for the show question page.
+This page contains the title of the question on top of page, followed by the question content just under it.
+Under the question, all the answers are listed. The render 'answers/answer' is to use a certain file created
+somewhere else.
+Same thing for render 'answers/form'.
+A user should only be able to edit or delete its questions.-->
 
-	<h2 align="center">Title: <%= @question.title %> </h2>
+
+	<h1> <%= @question.title %> </h1>
 	<hr>
 	<br>
 		<div class="well well-lg">
