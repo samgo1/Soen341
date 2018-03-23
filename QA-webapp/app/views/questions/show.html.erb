@@ -6,6 +6,14 @@ Same thing for render 'answers/form'.
 A user should only be able to edit or delete its questions.-->
 
 
+<!--Interface for the show question page.
+This page contains the title of the question on top of page, followed by the question content just under it.
+Under the question, all the answers are listed. The render 'answers/answer' is to use a certain file created
+somewhere else.
+Same thing for render 'answers/form'.
+A user should only be able to edit or delete its questions.-->
+
+
 	<h1> <%= @question.title %> </h1>
 	<hr>
 	<br>
@@ -28,13 +36,11 @@ A user should only be able to edit or delete its questions.-->
 			<h4 class="center description"><strong>Description:</strong></h4>
 			 <%= simple_format(@question.text) %> 
 			<br>
-
 			<div class="question_actions">
 				<br>
 				<%= if user_signed_in? && @question.user.id == current_user.id
 						link_to "Edit", edit_question_path(@question), class: "btn btn-primary"
 					end %>
-
 				<div style="margin-top: 10px">
 				<%= if user_signed_in? && @question.user.id == current_user.id
 						button_to 'Delete', question_path(@question), method: :delete, data: { confirm: 'Are you sure?' },
@@ -42,16 +48,13 @@ A user should only be able to edit or delete its questions.-->
 					end %>
 				</div>
 				<br>
-
 			</div>
 		</div>
 	<hr>
 		<%= render 'answers/answer' %>
-
 		<div style="margin-top: 45px"> <!--bottom margin in CSS coding-->
 			<%= render 'answers/form' unless user_signed_in? == false %>
 		</div>
-
 		<div style="margin-top: 50px"> <!--bottom margin in CSS coding-->
 			<div style="margin-bottom: 65px">
 			<%= link_to "Return to main page", questions_path, :class => 'btn btn-primary'%>

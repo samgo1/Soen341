@@ -1,20 +1,19 @@
 
+<!--Edit question page interface.
+It shows the title and content which you can edit.
+2 different buttons is created: (Edit question) & (Cancel)-->
+
 <div class="container">
-
   <h2>Edit Question</h2><br>
-   
   <%= form_with model: @question do |form| %>
-
     <p>
       <%= form.label :title %><br>
       <%= form.text_field :title %>
     </p>
-
     <p>
       <%= form.label :content %><br>
       <%= form.text_area :text, cols: "85", rows: "10"%>
     </p>
-   
     <p>
       <%= form.submit "Edit Question", class: "btn btn-primary"%>
     </p>
