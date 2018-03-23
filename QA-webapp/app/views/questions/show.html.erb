@@ -13,6 +13,23 @@ A user should only be able to edit or delete its questions.-->
 		<div class="well well-lg">
 			<p> <%= @question.text %> </p>
 			<br>
+			<div class="caption" style="text-align:left;">
+
+				<%= link_to like_question_path(@question), class: "like", method: :put do %>
+					<button type="button" class="btn btn-primary" aria-label="Left Align">
+						<span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+						<span class="badge"> <%= @question.get_upvotes.size %> </span>
+				</button>
+				<% end %>
+
+				<%= link_to unlike_question_path(@question), class: "like", method: :put do %>
+					<button type="button" class="btn btn-primary" aria-label="Left Align">
+						<span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
+						<span class="badge"> <%= @question.get_downvotes.size %> </span>
+					</button>
+				<% end %>
+
+        	</div>
 			<div class="question_actions">
 				<br>
 				<%= if user_signed_in? && @question.user.id == current_user.id
