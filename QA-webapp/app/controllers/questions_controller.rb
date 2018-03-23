@@ -62,7 +62,6 @@ class QuestionsController < ApplicationController
       @question.destroy
     end
       redirect_to request.referrer
-    end
   end
   # the objects needs these parameters in order to be saved to the DB
   private
@@ -77,8 +76,8 @@ class QuestionsController < ApplicationController
       else
           return false
       end
-          
-  end
+    end
+
     def question_params
       params.require(:question).permit(:title, :text)
     end
