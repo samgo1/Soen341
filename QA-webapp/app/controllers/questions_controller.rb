@@ -1,6 +1,6 @@
 
 # Question controller file
-# Contains actions like show, create, edit, destroy and update question.
+# Contains actions like: show, create, edit, destroy and update question.
 
 class QuestionsController < ApplicationController
   
