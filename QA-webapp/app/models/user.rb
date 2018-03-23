@@ -23,7 +23,6 @@ validates :email, presence: true, length: {maximum: 105},
         return true
       end
     end
-    
     return false
   end
 end
