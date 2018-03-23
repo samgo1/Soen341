@@ -18,7 +18,7 @@
                 <button type="button" class="btn btn-primary" aria-label="Left Align">
                     <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
                     <span class="badge"> <%= answer.get_upvotes.size %> </span>
-                </button>
+               </button>
             <% end %>
 
             <%= link_to unlike_answer_path(answer), class: "like", method: :put do %>
@@ -28,7 +28,7 @@
                 </button>
             <% end %>
 
-            </div>
+        </div> 
 
         <%= if user_signed_in? && answer.user.id == current_user.id 
 			button_to 'delete answer', [answer.question, answer], method: :delete, 

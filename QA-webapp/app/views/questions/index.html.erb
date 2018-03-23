@@ -13,7 +13,7 @@
 
 <div class="col-xs-6 col-xs-offset-2">
 
-	<% @questions.each do |question| %>
+	<% @questions.order(cached_votes_score: :desc).each do |question| %>
 		<div class="row">
 
 			<div class="well well-lg">
@@ -32,6 +32,23 @@
 					last updated: <%= time_ago_in_words(question.updated_at) %> ago</small>
 					 </p>
 					</div>
+					<div class="caption" style="text-align:center;">
+
+							<%= link_to like_question_path(question), class: "like", method: :put do %>
+								<button type="button" class="btn btn-primary" aria-label="Left Align">
+									<span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+									<span class="badge"> <%= question.get_upvotes.size %> </span>
+							</button>
+							<% end %>
+
+							<%= link_to unlike_question_path(question), class: "like", method: :put do %>
+								<button type="button" class="btn btn-primary" aria-label="Left Align">
+									<span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
+									<span class="badge"> <%= question.get_downvotes.size %> </span>
+								</button>
+							<% end %>
+
+        			</div> 
 				</div>
 			</div>
 		</div>
