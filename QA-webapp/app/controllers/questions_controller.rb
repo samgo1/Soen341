@@ -1,3 +1,7 @@
+
+# Question controller file
+# Contains actions like: show, create, edit, destroy and update question.
+
 class QuestionsController < ApplicationController
   
   before_action :set_question, only: [:show,:edit,:update,:destroy, :upvote, :downvote]
@@ -10,10 +14,19 @@ class QuestionsController < ApplicationController
   end
   
   def new
+    if user_signed_in? == false
+      flash[:notice] = "You must be signed in to ask a question."
+      redirect_to home_path
+    end
     @question = Question.new
   end
   
   def edit
+    @question = Question.find(params[:id])
+    unless user_signed_in? && current_user.id == @question.user.id
+      flash[:notice] = "You must own the question to modify it."
+      redirect_to home_path
+    end
   end
   
   def create
@@ -28,7 +41,8 @@ class QuestionsController < ApplicationController
   end
 
   def update
-        if(@question.update(question_params))
+    @question = Question.find(params[:id])
+        if @question.update(question_params)
             redirect_to @question
         else 
             render 'edit'
@@ -54,7 +68,6 @@ class QuestionsController < ApplicationController
     end
   end
   # the objects needs these parameters in order to be saved to the DB
-  # security will be added later
   private
     def set_question
       @question = Question.find(params[:id])

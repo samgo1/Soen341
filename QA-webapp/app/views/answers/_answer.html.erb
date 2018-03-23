@@ -1,9 +1,11 @@
 
+<!--The interface to list all the answers in the show question page
+It also contains the interface for the voting system. Each time the thumbs up or down is pressed, 
+a vote will be saved in the database.-->
 
 <div id="mytext" style="margin-bottom: 40px">
 <h2>All Answers</h2>
 </div>
-
 <% @question.answers.order(cached_votes_score: :desc).each do |answer| %>
     <div class="well">
     	<div id="mytext" style="margin-bottom: 25px">
@@ -11,9 +13,7 @@
     		<%= answer.body %>
    	 	</div>
 
-
         <div class="caption" style="text-align:left;">
-
             <%= link_to like_answer_path(answer), class: "like", method: :put do %>
                 <button type="button" class="btn btn-primary" aria-label="Left Align">
                     <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
@@ -24,15 +24,14 @@
             <%= link_to unlike_answer_path(answer), class: "like", method: :put do %>
                 <button type="button" class="btn btn-primary" aria-label="Left Align">
                     <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
-                    <span class="badge"> <%= answer.get_downvotes.size %> </span>
+                    <span class="badge"> <%=answer.get_downvotes.size %></span>
                 </button>
             <% end %>
-
-        </div> 
+        </div>
 
         <%= if user_signed_in? && answer.user.id == current_user.id 
 			button_to 'delete answer', [answer.question, answer], method: :delete, 
-			data: { confirm: 'Are you sure?'}, class: 'btn btn-link'
+			data: {confirm: 'Are you sure?'}, class: 'btn btn-link'
 		end %>
     </div>
 <% end %>

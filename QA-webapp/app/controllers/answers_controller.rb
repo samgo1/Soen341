@@ -1,3 +1,7 @@
+
+# Answers controller file
+# Contains a create and destroy answers, along with a voting system.
+
 class AnswersController < ApplicationController
 
     before_action :set_answer, only: [:destroy, :upvote, :downvote]
@@ -23,8 +27,9 @@ class AnswersController < ApplicationController
     end
 
     # Thumbs-up voting that is assigned to each user
+    # a user cannot vote more than one time
     def upvote
-        @answer.upvote_from current_user # a user cannot vote more than one time
+        @answer.upvote_from current_user
         redirect_to request.referrer 
     end
 
@@ -40,16 +45,16 @@ class AnswersController < ApplicationController
     end
 
     private
+    # Algorithm for the rejecting answers
         def answer_rejected?
             @total = @answer.cached_votes_total
             if(@total > 10 && @answer.cached_votes_down > 0.6 * @total)
                 return true
             else
                 return false
-            end
-                
+            end   
         end
-
+        
         def set_answer
             @answer = Answer.find(params[:id])
         end
