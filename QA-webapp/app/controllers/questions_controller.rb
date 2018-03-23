@@ -1,3 +1,7 @@
+
+# Question controller file
+# Contains actions like show, create, edit, destroy and update question.
+
 class QuestionsController < ApplicationController
   
   def index
@@ -13,7 +17,6 @@ class QuestionsController < ApplicationController
       flash[:notice] = "You must be signed in to ask a question."
       redirect_to home_path
     end
-    
     @question = Question.new
   end
   
@@ -38,7 +41,6 @@ class QuestionsController < ApplicationController
 
   def update
     @question = Question.find(params[:id])
-
         if(@question.update(question_params))
             redirect_to @question
         else 
@@ -49,12 +51,10 @@ class QuestionsController < ApplicationController
   def destroy
     @question = Question.find(params[:id])
     @question.destroy
-    
     redirect_to questions_path
   end
   
   # the objects needs these parameters in order to be saved to the DB
-  # security will be added later
   private
     def question_params
       params.require(:question).permit(:title, :text)
