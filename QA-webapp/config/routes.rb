@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   resources :users
   root 'welcome#index', as: 'home'
   resources :questions do
+    member do
+      put "like" => "questions#upvote"
+      put "unlike" => "questions#downvote"
+    end
     resources :answers
   end
 
