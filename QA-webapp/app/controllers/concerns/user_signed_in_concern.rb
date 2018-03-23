@@ -1,7 +1,5 @@
 module UserSignedInConcern
   extend ActiveSupport::Concern
-  # these methods can be used in any controller by adding the following statement in your controller
-  # include UserSignedInConcern
   
   included do
       helper_method :user_signed_in?, :current_user
