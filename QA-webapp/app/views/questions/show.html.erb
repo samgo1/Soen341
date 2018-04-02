@@ -26,7 +26,7 @@ A user should only be able to edit or delete its questions.-->
 			   			<li class="question-title">
 			   				<%=link_to @question.user.username, user_path(@question.user) %>
 			   			</li>
-					
+
 			   			<li><small>
 							<%= pluralize(@question.user.questions.count, "question") if @question.user.questions %> </small></li>
 						</li></small>
@@ -34,7 +34,8 @@ A user should only be able to edit or delete its questions.-->
 				</div>
 			</ul>
 			<h4 class="center description"><strong>Description:</strong></h4>
-			 <%= simple_format(@question.text) %> 
+			 <%= simple_format(@question.text) %>
+
 			<br>
 			<div class="caption" style="text-align:left;">
 

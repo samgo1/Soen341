@@ -2,6 +2,7 @@
 Every content on this page is aligned to the center.
 Displays the gravatar associated with the user profile
 Questions are rendered from _question.html.erb partial.
+
 Each question is separated with bootstrap wells containing the title of the question in blue, 
 a sample of the question and information about who asked the question (when and last updated)-->
 
@@ -13,5 +14,3 @@ a sample of the question and information about who asked the question (when and 
 </div>
 <h4 align="center"><%= @user.username %>'s questions</h4>
 <%= render 'questions/question', obj:@user.questions %>
-
-

@@ -10,19 +10,16 @@
 			<li class="question-title">
 				<%=link_to user.username, user_path(user) %>
 			</li>
-					
-			<li><small> 
+
+			<li><small>
 			<%= pluralize(user.questions.count, "question") if user.questions %> </small></li>
 		<li><small>
 			<%=link_to 'Edit', edit_user_path(user) %>
 		</small></li>
-		
+
 		</div>
 	</div>
  </ul>
 	<% end %>
 	<%= will_paginate %>
 </div>
-
-
-	 
